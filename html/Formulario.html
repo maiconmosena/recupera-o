@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Bem vindo!</h1>
+                <h2>Aprecie um novo ambiente</h2>
+            </hgroup>
+            <nav id="menu">
+                <h1>Menu principal</h1>
+                <ul>
+                    <li onmouseover="mudaFoto('./_imagens/Home.png')" onmouseout="mudaFoto('./_imagens/especificacoes.png')"><a href="./Index.html">Home</a></li>
+                    <li onmouseover="mudaFoto('./_imagens/especificacoes.png')" onmouseout="mudaFoto('./_imagens/especificacoes.png')"><a href="./Imagens.html">Galeria de imagens</a></li>
+                    <li onmouseover="mudaFoto('./_imagens/fotos.png')" onmouseout="mudaFoto('./_imagens/especificacoes.png')"><a href="./Formulario.html">Formulário</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="full">
+            <article id="noticiaPrincipal">
+                <header id="cabecalhoArtigo"></header>
+
+                <form method="post" id="contato" action="mailto:contato@cursoemvideo.com" oninput="calcular();">
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                        <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="30"
+                                maxlength="30" placeholder="..."></p>
+                        <p><label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="8"
+                                maxlength="8"></p>
+                        <p><label for="cEmail">E-mail:</label><input type="email" name="tEmail" id="cEmail" size="20"
+                                maxlength="40"></p>
+                        <fieldset id="sexo">
+                            <legend>Sexo:</legend>
+                            <input type="radio" name="tSexo" id="cMasc" children><label
+                                for="cMasc">Masculino</label><br>
+                            <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino </label>
+                        </fieldset>
+                        <p>Data de Nascimento: <input type="date" name="tNasc" id="cNasc"></p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                        <p><label for="cRua">Logradouro:</label>
+                            <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="...">
+                        </p>
+                        <p><label for="cNum">Número:</label>
+                            <input type="number" name="tNum" id="cNum" min="0" max="9999">
+                        </p>
+                        <p><label for="cEst">Estado:</label>
+                            <select name="tEst" id="cEst">
+                                <optgroup label="Sul">
+                                    <option value="SC" selected>Santa catarina</option>
+                                    <option value="PR">Parana</option>
+                                    <option value="RS">Rio Grande do Sul</option></p>
+                                </optgroup>
+                            </select>
+                        <p><label for="cCid">Cidade:</label>
+                            <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="..."
+                                list="cidades">
+                        </p>
+                        <datalist id="cidades">
+                            <option value="Romelandia">Romelandia</option>
+                            <option value="Curitiba">Curitiba</option>
+                            <option value="Porto Alegre">Porto Alegre</option>
+                        </datalist>
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                        <p><label for="cUrg">Grau de Urgência:</label>
+                            Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx</p>
+                        <p><label for="cMsg">Mensagem:</label>
+                            <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Mensagem"></textarea>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                        <p><input type="checkbox" name="tPed" id="cPed" checked>
+                            <label for="cPed">Gostaria de adquirir um Google Glass quando disponível:</label>
+                        </p>
+                        <p><label for="cCor">Cor:</label>
+                            <input type="color" name="tCor" id="cCor" value="#0000ff">
+                        </p>
+                        <p><label for="cQtd">Quantidade:</label>
+                            <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0">
+                        </p>
+                        <p><label for="cTot">Preço Total: R$</label>
+                            <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly>
+                        </p>
+                    </fieldset>
+
+                    <input type="image" name="tEnviar" src="../imagens/botao-enviar.png">
+                </form>
+            </article>
+        </section>
+        <footer id="rodape">
+            <p>Copyright 2013 - by Maicon Mosena<br>
+                <a href="https://facebook.com/maiconmosena" target="_blank">Facebook</a> |
+                <a href="https://instagram.com/maiconmosena" target="_blank">Twitter</a>
+            </p>
+        </footer>
+    </div>
+</body>
+    <script src="../js/funcoes.js"></script>
+</html>
